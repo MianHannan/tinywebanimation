@@ -1,23 +1,22 @@
-import logo from './logo.svg';
-import './App.css';
+import React from 'react'
+import useWebAnimations, { bounce } from '@wellyshen/use-web-animations'
+
+//component import
+import HeaderSection from './component/HeaderSection'
+import FeaturesSection from './component/FeaturesSection'
+import UsedBySection from './component/UsedBySection'
+import Footer from './component/Footer'
 
 function App() {
+
+  const headerAnim = useWebAnimations(bounce);
+
   return (
-    <div className="App">
-      <header className="App-header">
-        <img src={logo} className="App-logo" alt="logo" />
-        <p>
-          Edit <code>src/App.js</code> and save to reload.
-        </p>
-        <a
-          className="App-link"
-          href="https://reactjs.org"
-          target="_blank"
-          rel="noopener noreferrer"
-        >
-          Learn React
-        </a>
-      </header>
+    <div>
+      <HeaderSection ref={headerAnim.ref} />
+      <FeaturesSection />
+      <UsedBySection />
+      <Footer />
     </div>
   );
 }
